@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — onebase.</title>
+    <meta
+      name="description"
+      content="Privacy Policy and Data Deletion information for Onebase (onebase.) — Project accounts, petty cash, receipts, and team custody."
+    />
+    <meta name="theme-color" content="#0E3B2E" />
+    <link rel="icon" type="image/png" href="../assets/branding/app_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --white: #FFFFFF;
+        --canvas: #F3F4EF;
+        --surface-subtle: #F8F9F5;
+        --line: #E5E7E0;
+        --line-strong: #D0D5CB;
+        --ink: #0F1A15;
+        --ink-2: #38433D;
+        --muted: #55605A;
+        --brand: #0E3B2E;
+        --brand-mid: #14563F;
+        --mint: #2EE59D;
+        --mint-ink: #072219;
+        --on-brand: #FFFFFF;
+        --on-brand-muted: #C9DCD3;
+        --brand-rule: rgba(255, 255, 255, 0.14);
+        --font-en: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-ar: "IBM Plex Sans Arabic", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      [hidden] { display: none !important; }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--canvas);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: var(--font-en);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      [dir="rtl"] body {
+        font-family: var(--font-ar);
+        line-height: 1.8;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Top Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(14, 59, 46, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--brand-rule);
+      }
+
+      .nav-row {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand-lockup {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        direction: ltr;
+      }
+
+      .brand-badge {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        overflow: hidden;
+        background: #143D2F;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .brand-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.38);
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-en);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--on-brand);
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+
+      .brand-wordmark .dot {
+        color: var(--mint);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-link {
+        color: var(--on-brand-muted);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 7px 12px;
+        border-radius: 999px;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .lang-btn {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        border: 1px solid var(--brand-rule);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-family: inherit;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+
+      .lang-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Hero Banner */
+      .policy-hero {
+        background: var(--brand);
+        color: var(--on-brand);
+        padding: 48px 0 56px;
+        border-bottom: 1px solid var(--brand-rule);
+      }
+
+      .policy-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--mint);
+        background: rgba(46, 229, 157, 0.12);
+        border: 1px solid rgba(46, 229, 157, 0.28);
+        padding: 5px 12px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+      }
+
+      .policy-hero h1 {
+        margin: 0 0 12px;
+        font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .policy-hero p {
+        margin: 0;
+        color: var(--on-brand-muted);
+        max-width: 620px;
+        font-size: 15.5px;
+      }
+
+      .policy-meta {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        font-size: 13.5px;
+        color: var(--on-brand-muted);
+      }
+
+      /* Policy Card Body */
+      .policy-main {
+        padding: 36px 0 64px;
+      }
+
+      .policy-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 36px 32px;
+      }
+
+      @media (max-width: 640px) {
+        .policy-card {
+          padding: 24px 20px;
+          border-radius: 18px;
+        }
+        .policy-hero {
+          padding: 36px 0 40px;
+        }
+      }
+
+      .policy-section {
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .policy-section:first-child {
+        padding-top: 0;
+      }
+
+      .policy-section:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .policy-section h2 {
+        margin: 0 0 10px;
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--brand);
+      }
+
+      .policy-section p {
+        margin: 0 0 12px;
+        color: var(--ink-2);
+      }
+
+      .policy-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .policy-section ul {
+        margin: 0 0 12px;
+        padding-inline-start: 20px;
+        color: var(--ink-2);
+      }
+
+      .policy-section li {
+        margin-bottom: 8px;
+      }
+
+      .policy-section li strong {
+        color: var(--ink);
+      }
+
+      .highlight-box {
+        background: var(--surface-subtle);
+        border: 1px solid var(--line-strong);
+        border-inline-start: 4px solid var(--brand);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin-top: 12px;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      a.inline-link {
+        color: var(--brand-mid);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* Footer */
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 24px 0 36px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .footer-wordmark {
+        font-family: var(--font-en);
+        font-weight: 700;
+        color: var(--brand);
+        font-size: 17px;
+        letter-spacing: -0.03em;
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+
+      .footer-wordmark .dot {
+        color: var(--mint);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand-lockup" href="../" aria-label="onebase. Home">
+          <span class="brand-badge">
+            <img src="../assets/branding/app_icon.png" alt="onebase." />
+          </span>
+          <span class="brand-wordmark">onebase<span class="dot">.</span></span>
+        </a>
+        <div class="nav-actions">
+          <a class="nav-link" href="../" id="nav-home">Back to Home</a>
+          <button type="button" class="lang-btn" id="btn-lang" aria-label="Switch language">العربية</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en">
+      <section class="policy-hero">
+        <div class="container">
+          <span class="policy-eyebrow">Legal &amp; Privacy</span>
+          <h1>Privacy Policy</h1>
+          <p>
+            How Onebase (<strong>onebase.</strong>) collects, uses, protects, and lets you delete your data across our iOS, Android, and Web apps.
+          </p>
+          <div class="policy-meta">
+            <span><strong>Effective Date:</strong> November 26, 2026</span>
+            <span><strong>App:</strong> Onebase (com.onebase.ledger)</span>
+          </div>
+        </div>
+      </section>
+
+      <main class="policy-main">
+        <div class="container">
+          <article class="policy-card">
+            <section class="policy-section">
+              <h2>1. Overview</h2>
+              <p>
+                Onebase (<strong>"onebase."</strong>, <strong>"we"</strong>, <strong>"our"</strong>) is a bilingual project ledger, petty-cash custody, and receipt-tracking application for contractors, engineers, teams, and individuals. We respect your privacy and collect only the information necessary to provide, sync, and secure your workspace.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>2. Information We Collect</h2>
+              <ul>
+                <li>
+                  <strong>Account &amp; Contact Information:</strong> Your email address, mobile phone number, display name, and authentication identifiers when you sign in using Email OTP, Phone OTP, Sign in with Apple, or Google Sign-In.
+                </li>
+                <li>
+                  <strong>Workspace &amp; Financial Records:</strong> Projects, client names, inflows, expenses, petty-cash custody transfers, category tags, tasks, notes, and PDF statements that you voluntarily enter into the app.
+                </li>
+                <li>
+                  <strong>Camera &amp; Photo Library (User-Initiated Only):</strong> Receipt photos, paper invoices, and transfer screenshots that you explicitly capture with your camera or select from your photo library to attach to transactions or scan with AI. We never access your camera or photos in the background.
+                </li>
+                <li>
+                  <strong>Microphone &amp; Voice Audio (Optional, User-Initiated Only):</strong> If you choose to use Voice Entry to dictate expenses, inflows, or tasks, audio is recorded only while you actively hold or trigger the microphone button. We never record audio in the background.
+                </li>
+                <li>
+                  <strong>Team Member Details:</strong> Names, roles, and contact details (email or phone) of team members you invite to collaborate on custody and project expenses.
+                </li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>3. AI Processing (Receipt Scanning &amp; Voice Entry)</h2>
+              <p>
+                Onebase offers optional AI-assisted features to save you time entering expenses and tasks:
+              </p>
+              <ul>
+                <li>
+                  <strong>AI Receipt &amp; Batch OCR:</strong> When you scan a paper receipt or transfer screenshot, the image is transmitted securely over HTTPS to our backend (Supabase Edge Functions) and processed using <strong>Google Gemini AI</strong> solely to extract structured fields (amount, date, description, and suggested category).
+                </li>
+                <li>
+                  <strong>AI Voice Entry:</strong> When you dictate a transaction or task, your voice clip is transmitted securely over HTTPS to our backend and processed using <strong>Google Gemini AI</strong> solely to transcribe speech and prefill draft fields for your review. Raw voice recordings are not retained permanently after transcription.
+                </li>
+                <li>
+                  <strong>No AI Model Training &amp; Human Review:</strong> Your receipt images, voice clips, and financial records are processed strictly on-demand to serve your request, are <strong>not</strong> used to train public or third-party AI models, and always require your explicit review before being saved to your ledger.
+                </li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>4. How We Use Your Information</h2>
+              <ul>
+                <li>Authenticate your account and keep your workspace synced across your devices.</li>
+                <li>Process receipt images you submit to automatically extract totals, dates, and descriptions (AI receipt scanning).</li>
+                <li>Generate shareable PDF account and custody statements when you request them.</li>
+                <li>Deliver one-time verification codes (OTP) and team invitations via email, SMS, or WhatsApp.</li>
+                <li>Maintain app security, prevent abuse, and respond to support requests.</li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>5. No Ads &amp; No Sale of Personal Data</h2>
+              <p>
+                We <strong>do not sell</strong> your personal or financial data to third parties, and we <strong>do not</strong> use your data for third-party advertising or cross-app tracking.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>6. Infrastructure &amp; Third-Party Processors</h2>
+              <p>We rely on trusted infrastructure providers strictly to operate the service:</p>
+              <ul>
+                <li><strong>Supabase:</strong> Cloud database, authentication, encrypted file storage for receipt attachments, Edge Functions, and Row-Level Security (RLS) tenant isolation.</li>
+                <li><strong>Google Gemini API:</strong> Used strictly on-demand when you explicitly trigger AI Receipt Scanning or AI Voice Entry.</li>
+                <li><strong>Apple &amp; Google Authentication:</strong> Used only if you choose "Continue with Apple" or "Continue with Google".</li>
+                <li><strong>Transactional Messaging Providers:</strong> Used strictly to deliver login verification codes (OTP) via email, SMS, or WhatsApp.</li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>7. Data Security &amp; Retention</h2>
+              <p>
+                All network communication between the Onebase app and our servers is encrypted via HTTPS/TLS. Workspace records are protected by strict tenant isolation so only authorized workspace owners and invited team members (with scoped permissions) can access their respective data. We retain your data for as long as your account remains active or until you delete it.
+              </p>
+            </section>
+
+            <section class="policy-section" id="deletion">
+              <h2>8. Account &amp; Data Deletion</h2>
+              <p>
+                You can permanently delete your account and all associated projects, transactions, custody records, and uploaded receipt photos at any time:
+              </p>
+              <div class="highlight-box">
+                <p>
+                  <strong>In-App Deletion:</strong> Open <strong>Onebase</strong> → tap <strong>Settings</strong> (top bar) → select <strong>Delete Account</strong> and confirm. Deletion removes your profile, workspace records, and stored receipt files.
+                </p>
+              </div>
+              <p style="margin-top: 12px;">
+                If you no longer have access to the app and want us to delete your account and data, email us at
+                <a class="inline-link" href="mailto:support@onebase.app">support@onebase.app</a>
+                from your registered email address (or include your registered phone number), and we will process your request within 7 business days.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>9. Children's Privacy</h2>
+              <p>
+                Onebase is intended for adults and business/project workflows and is not directed to children under the age of 13. We do not knowingly collect personal information from children.
+              </p>
+            </section>
+
+            <section class="policy-section" id="contact">
+              <h2>10. Changes &amp; Contact Us</h2>
+              <p>
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.
+              </p>
+              <p>
+                For privacy questions, data requests, or app support, contact us at:
+                <a class="inline-link" href="mailto:support@onebase.app">support@onebase.app</a>
+              </p>
+            </section>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <!-- ARABIC CONTENT -->
+    <div id="content-ar" hidden>
+      <section class="policy-hero">
+        <div class="container">
+          <span class="policy-eyebrow">الخصوصية والأمان</span>
+          <h1>سياسة الخصوصية</h1>
+          <p>
+            كيف يجمع تطبيق <strong>onebase.</strong> بياناتك ويستخدمها ويحميها، وكيف يمكنك حذف حسابك وبياناتك بالكامل في أي وقت على iOS و Android والويب.
+          </p>
+          <div class="policy-meta">
+            <span><strong>تاريخ السريان:</strong> 26 نوفمبر 2026</span>
+            <span><strong>التطبيق:</strong> Onebase (com.onebase.ledger)</span>
+          </div>
+        </div>
+      </section>
+
+      <main class="policy-main">
+        <div class="container">
+          <article class="policy-card">
+            <section class="policy-section">
+              <h2>1. نظرة عامة</h2>
+              <p>
+                تطبيق <strong>Onebase (onebase.)</strong> هو مساحة عمل لإدارة حسابات المشاريع والعُهد النثرية والفواتير وفرق العمل. نحترم خصوصيتك ونجمع فقط الحد الأدنى من البيانات اللازمة لتشغيل التطبيق ومزامنة بياناتك وحمايتها.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>2. البيانات التي نجمعها</h2>
+              <ul>
+                <li>
+                  <strong>بيانات الحساب والتواصل:</strong> البريد الإلكتروني، رقم الموبايل، الاسم الكامل، ومُعرّف تسجيل الدخول عند استخدام البريد أو الموبايل أو Apple أو Google.
+                </li>
+                <li>
+                  <strong>بيانات المشاريع والمعاملات:</strong> أسماء المشاريع والعملاء، الوارد والمنصرف، حركات العُهد، التصنيفات، المهام، الملاحظات، وكشوف الحساب التي تدخلها بنفسك.
+                </li>
+                <li>
+                  <strong>الكاميرا ومعرض الصور (بطلبك فقط):</strong> صور الفواتير الورقية ولقطات شاشة التحويلات التي تختار تصويرها أو إرفاقها بالمعاملات أو مسحها بالذكاء الاصطناعي. لا نصل أبداً للكاميرا أو الصور في الخلفية.
+                </li>
+                <li>
+                  <strong>الميكروفون والتسجيل الصوتي (اختياري وبطلبك فقط):</strong> عند اختيارك لاستخدام التسجيل الصوتي لإدخال المصروفات أو المهام، يتم تسجيل الصوت فقط أثناء ضغطك على زر الميكروفون. لا نقوم أبداً بالتسجيل في الخلفية.
+                </li>
+                <li>
+                  <strong>بيانات أعضاء الفريق:</strong> الأسماء والأدوار وأرقام التواصل لأعضاء الفريق الذين تضيفهم لمتابعة العُهد والمصروفات.
+                </li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>3. المعالجة بالذكاء الاصطناعي (مسح الفواتير والتسجيل الصوتي)</h2>
+              <p>
+                يوفر Onebase مزايا اختيارية مدعومة بالذكاء الاصطناعي لتسريع إدخال المصروفات والمهام:
+              </p>
+              <ul>
+                <li>
+                  <strong>قراءة الفواتير بالذكاء الاصطناعي (OCR):</strong> عند مسح فاتورة ورقية أو لقطة شاشة تحويل، يتم إرسال الصورة بشكل مشفر عبر HTTPS إلى خوادمنا (Supabase Edge Functions) ومعالجتها بواسطة <strong>Google Gemini AI</strong> فقط لاستخراج المبلغ والتاريخ والوصف والتصنيف المقترح.
+                </li>
+                <li>
+                  <strong>الإدخال الصوتي بالذكاء الاصطناعي:</strong> عند إملاء حركة أو مهمة بالصوت، يتم إرسال المقطع الصوتي بشكل مشفر عبر HTTPS ومعالجته بواسطة <strong>Google Gemini AI</strong> فقط لتحويل الصوت إلى مسودة حركة تراجعها قبل الحفظ. لا يتم الاحتفاظ بالتسجيلات الصوتية الخام بشكل دائم بعد التحويل.
+                </li>
+                <li>
+                  <strong>عدم استخدام بياناتك لتدريب نماذج الذكاء الاصطناعي:</strong> تُعالج صور الفواتير والمقاطع الصوتية عند الطلب فقط لتنفيذ مهمتك، و<strong>لا تُستخدم</strong> لتدريب نماذج ذكاء اصطناعي عامة أو تابعة لأطراف ثالثة، ودائماً تراجع البيانات وتؤكدها بنفسك قبل حفظها.
+                </li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>4. كيف نستخدم بياناتك</h2>
+              <ul>
+                <li>تسجيل دخولك ومزامنة مشاريعك وحساباتك بأمان عبر أجهزتك.</li>
+                <li>تحليل صور الفواتير التي ترفعها لاستخراج الإجمالي والوصف تلقائياً لتسهيل التسجيل.</li>
+                <li>إنشاء كشوف حساب PDF جاهزة للمشاركة عند طلبك.</li>
+                <li>إرسال أكواد التحقق (OTP) ودعوات الفريق عبر البريد الإلكتروني أو الرسائل القصيرة / واتساب.</li>
+                <li>حماية الحسابات والاستجابة لطلبات الدعم الفني.</li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>5. لا إعلانات ولا بيع للبيانات</h2>
+              <p>
+                نحن <strong>لا نبيع</strong> بياناتك الشخصية أو المالية لأي طرف ثالث، ولا نستخدمها في الإعلانات الموجهة أو التتبع عبر التطبيقات الأخرى.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>6. مزودو البنية التحتية</h2>
+              <p>نعتمد على مزودي خدمات موثوقين لتشغيل التطبيق فقط:</p>
+              <ul>
+                <li><strong>Supabase:</strong> قاعدة البيانات السحابية، التوثيق، التخزين المشفر لصور الفواتير، Edge Functions، وعزل البيانات بصلاحيات Row-Level Security (RLS).</li>
+                <li><strong>Google Gemini API:</strong> يُستخدم عند الطلب فقط عند تشغيل مسح الفواتير أو الإدخال الصوتي بالذكاء الاصطناعي.</li>
+                <li><strong>تسجيل الدخول عبر Apple و Google:</strong> يُستخدم فقط إذا اخترت الدخول بحساب Apple أو Google.</li>
+                <li><strong>مزودو الرسائل:</strong> يُستخدمون فقط لإرسال أكواد التحقق (OTP) عبر البريد أو SMS أو واتساب.</li>
+              </ul>
+            </section>
+
+            <section class="policy-section">
+              <h2>7. الأمان والاحتفاظ بالبيانات</h2>
+              <p>
+                جميع الاتصالات بين التطبيق والخوادم مشفرة عبر HTTPS/TLS، وتتم حماية بيانات كل مساحة عمل بعزل كامل بحيث لا يطلع عليها سوى المالك وأعضاء الفريق المصرح لهم فقط. نحتفظ ببياناتك طالما حسابك نشط أو حتى تطلب حذفها.
+              </p>
+            </section>
+
+            <section class="policy-section" id="deletion-ar">
+              <h2>8. حذف الحساب والبيانات</h2>
+              <p>
+                يمكنك حذف حسابك بالكامل مع جميع المشاريع والمعاملات وسجلات العُهد وصور الفواتير المرفقة في أي وقت:
+              </p>
+              <div class="highlight-box">
+                <p>
+                  <strong>الحذف من داخل التطبيق:</strong> افتح تطبيق <strong>Onebase</strong> ← اضغط على <strong>الإعدادات</strong> في الشريط العلوي ← اختر <strong>حذف الحساب</strong> وأكّد الحذف.
+                </p>
+              </div>
+              <p style="margin-top: 12px;">
+                وفي حال تعذر وصولك للتطبيق، يمكنك مراسلتنا على
+                <a class="inline-link" href="mailto:support@onebase.app">support@onebase.app</a>
+                من بريدك المسجل (أو مع رقم موبايلك المسجل) وسنقوم بحذف حسابك وبياناتك خلال 7 أيام عمل.
+              </p>
+            </section>
+
+            <section class="policy-section">
+              <h2>9. خصوصية الأطفال</h2>
+              <p>
+                تطبيق Onebase مخصص للبالغين وأعمال المشاريع ولا يستهدف الأطفال دون سن 13 عاماً، ولا نجمع عن علم أي بيانات تخص الأطفال.
+              </p>
+            </section>
+
+            <section class="policy-section" id="contact-ar">
+              <h2>10. التحديثات والتواصل معنا</h2>
+              <p>
+                قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر، وسيتم نشر أي تحديث على هذه الصفحة مع تاريخ سريانه الجديد.
+              </p>
+              <p>
+                للاستفسارات المتعلقة بالخصوصية أو الدعم الفني، تواصل معنا عبر:
+                <a class="inline-link" href="mailto:support@onebase.app">support@onebase.app</a>
+              </p>
+            </section>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <span class="footer-wordmark">onebase<span class="dot">.</span></span>
+        <span id="footer-copy">© 2026 Onebase. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        let lang = params.get('lang') === 'ar' ? 'ar' : 'en';
+
+        const html = document.documentElement;
+        const enEl = document.getElementById('content-en');
+        const arEl = document.getElementById('content-ar');
+        const btnLang = document.getElementById('btn-lang');
+        const navHome = document.getElementById('nav-home');
+        const footerCopy = document.getElementById('footer-copy');
+
+        function applyLang(next) {
+          lang = next === 'ar' ? 'ar' : 'en';
+          html.lang = lang;
+          html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+          enEl.hidden = lang === 'ar';
+          arEl.hidden = lang !== 'ar';
+          btnLang.textContent = lang === 'ar' ? 'English' : 'العربية';
+          navHome.textContent = lang === 'ar' ? 'العودة للرئيسية' : 'Back to Home';
+          navHome.href = lang === 'ar' ? '../?lang=ar' : '../?lang=en';
+          footerCopy.textContent =
+            lang === 'ar'
+              ? '© 2026 Onebase. جميع الحقوق محفوظة.'
+              : '© 2026 Onebase. All rights reserved.';
+          document.title =
+            lang === 'ar' ? 'سياسة الخصوصية — onebase.' : 'Privacy Policy — onebase.';
+        }
+
+        btnLang.addEventListener('click', function () {
+          const next = lang === 'ar' ? 'en' : 'ar';
+          applyLang(next);
+          const url = new URL(window.location.href);
+          url.searchParams.set('lang', next);
+          window.history.replaceState({}, '', url.toString());
+        });
+
+        applyLang(lang);
+      })();
+    </script>
+  </body>
+</html>

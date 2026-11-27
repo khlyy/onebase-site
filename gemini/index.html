@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>onebase. Replace WhatsApp and Excel for any account or team</title>
+    <meta
+      name="description"
+      content="Log payments and inflows by voice, AI receipt scan, InstaPay screenshot, or quick manual entry. Built for solo accounts and shared team balances with bilingual A4 PDFs."
+    />
+    <link rel="canonical" href="https://onebase.app/gemini/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onebase.app/gemini/" />
+    <meta property="og:title" content="onebase. Replace WhatsApp and Excel for any account or team" />
+    <meta
+      property="og:description"
+      content="Log payments, receipts, and team balances by voice or camera. Built for solo accounts and teams alike."
+    />
+    <meta property="og:image" content="../assets/branding/app_icon.png" />
+    <meta name="theme-color" content="#0E3B2E" />
+    <link rel="icon" type="image/png" href="../assets/branding/app_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>:focus-visible { outline: 2.5px solid #2EE59D; outline-offset: 2px; }</style>
+    <script src="../site-config.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="brand-lockup" href="#top" aria-label="onebase. home">
+          <span class="brand-badge">
+            <img src="../assets/branding/app_icon.png" alt="" width="34" height="34" />
+          </span>
+          <span class="brand-wordmark">onebase<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="#entry" data-i18n="nav.entry">Easy entry</a>
+          <a class="nav-link" href="#modes" data-i18n="nav.modes">Solo &amp; teams</a>
+          <a class="nav-link" href="#tour" data-i18n="nav.tour">Inside the app</a>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="lang-btn" id="btn-lang-toggle" aria-label="Switch language to Arabic">
+            العربية
+          </button>
+          <a class="header-cta" href="#early-access" data-i18n="nav.earlyAccess">Join free beta</a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="btn-menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+            aria-label="Open menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="mobile-drawer-nav" aria-label="Mobile navigation">
+          <a class="mobile-drawer-link" href="#entry" data-i18n="nav.entry">Easy entry</a>
+          <a class="mobile-drawer-link" href="#modes" data-i18n="nav.modes">Solo &amp; teams</a>
+          <a class="mobile-drawer-link" href="#tour" data-i18n="nav.tour">Inside the app</a>
+          <a class="mobile-drawer-link" href="#early-access" data-i18n="nav.earlyAccess">Join free beta</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Full-bleed Deep Spruce Hero bleeding to y = 0 -->
+      <section class="hero-section" id="top">
+        <div class="container hero-stack">
+          <div class="hero-head">
+            <h1 class="hero-title" data-i18n="hero.headline">
+              Leave WhatsApp and Excel behind.
+            </h1>
+            <p class="hero-subhead" data-i18n="hero.subhead">
+              Log payments, receipts, and team balances by voice or camera. Built for solo accounts and teams alike.
+            </p>
+            <div class="hero-action-wrap">
+              <a class="btn btn--mint" href="#early-access" data-i18n="hero.ctaPrimary">Join free beta</a>
+            </div>
+          </div>
+
+          <div class="hero-stage">
+            <div class="seg-control seg-control--dark" id="hero-triad-switch" role="tablist" aria-label="Featured app views"></div>
+
+            <div class="hero-triad" id="hero-triad">
+              <div class="hero-triad-slot hero-triad-slot--side" id="hero-slot-prev">
+                <button
+                  type="button"
+                  class="phone-frame phone-frame--triad-side"
+                  id="hero-side-prev-btn"
+                  data-triad-slot="prev"
+                  aria-label="Focus Voice AI screen"
+                >
+                  <span class="phone-screen">
+                    <span class="phone-status-bar" aria-hidden="true">
+                      <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                        <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                        <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                        <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                        <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                        <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                        <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                        <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                        <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                        <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                      </svg>
+                    </span>
+                    <img
+                      id="hero-side-prev-img"
+                      src="../assets/screenshots/en/11-voice-action-plan.png"
+                      alt="onebase. Voice Action Plan"
+                      width="786"
+                      height="1704"
+                    />
+                  </span>
+                </button>
+              </div>
+
+              <div class="hero-triad-slot hero-triad-slot--center" id="hero-slot-center">
+                <button
+                  type="button"
+                  class="phone-frame phone-frame--triad-center phone-trigger"
+                  id="hero-center-btn"
+                  data-lightbox-shot="01-owner-home.png"
+                  aria-label="Click screen to zoom: All accounts"
+                >
+                  <span class="phone-screen">
+                    <span class="phone-status-bar" aria-hidden="true">
+                      <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                        <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                        <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                        <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                        <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                        <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                        <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                        <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                        <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                        <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                      </svg>
+                    </span>
+                    <img
+                      id="hero-center-img"
+                      src="../assets/screenshots/en/01-owner-home.png"
+                      alt="onebase. All Accounts home screen"
+                      width="786"
+                      height="1704"
+                    />
+                  </span>
+                </button>
+              </div>
+
+              <div class="hero-triad-slot hero-triad-slot--side" id="hero-slot-next">
+                <button
+                  type="button"
+                  class="phone-frame phone-frame--triad-side"
+                  id="hero-side-next-btn"
+                  data-triad-slot="next"
+                  aria-label="Focus Team view screen"
+                >
+                  <span class="phone-screen">
+                    <span class="phone-status-bar" aria-hidden="true">
+                      <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                        <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                        <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                        <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                        <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                        <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                        <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                        <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                        <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                        <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                      </svg>
+                    </span>
+                    <img
+                      id="hero-side-next-img"
+                      src="../assets/screenshots/en/02-employee-wallet.png"
+                      alt="onebase. Team Member wallet"
+                      width="786"
+                      height="1704"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <p class="phone-caption phone-caption--on-dark" id="hero-stage-caption">
+              All accounts, paid ratio, and live team balances in one overview
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Hairline Entry & AI Index + Sticky Phone (Warm-Stone) -->
+      <section class="story-section story-section--stone" id="entry">
+        <div class="container story-grid story-grid--entry">
+          <div class="story-copy story-copy--wide">
+            <h2 class="section-title" data-i18n="entry.headline">Every fast way to log, handled by AI.</h2>
+            <p class="section-lead" data-i18n="entry.subhead">
+              Pick any method inside onebase. Speak naturally while busy, snap a receipt, forward an InstaPay slip, or type two numbers by hand.
+            </p>
+
+            <div class="entry-index" id="entry-modes-list" role="tablist" aria-label="Entry methods showcase"></div>
+
+            <blockquote class="voice-quote" data-i18n="entry.voiceQuote">
+              “Paid 1,850 EGP for Zamalek Studio internet and utility bill, and remind me tomorrow to confirm the tax invoice with Sameh.”
+            </blockquote>
+          </div>
+
+          <div class="phone-showcase-col phone-showcase-col--sticky">
+            <button
+              type="button"
+              class="phone-frame phone-frame--sheet-top phone-trigger"
+              id="entry-phone-frame"
+              data-lightbox-shot="09-voice-listening.png"
+              aria-label="Click screen to zoom: Speak naturally in Arabic or English"
+            >
+              <span class="phone-screen">
+                <span class="phone-status-bar" aria-hidden="true">
+                  <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                    <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                    <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                    <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                    <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                    <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                    <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                    <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                    <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                  </svg>
+                </span>
+                <img
+                  id="entry-phone-img"
+                  src="../assets/screenshots/en/09-voice-listening.png"
+                  alt="onebase. Voice Command recording screen with live audio waveform"
+                  width="786"
+                  height="1704"
+                  loading="lazy"
+                />
+              </span>
+            </button>
+            <p class="phone-caption" id="entry-phone-caption">
+              Voice capture listens cleanly in natural Egyptian Arabic or English
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Solo & Teams Editorial Split (White) -->
+      <section class="story-section story-section--white" id="modes">
+        <div class="container story-grid story-grid--phone-start">
+          <div class="phone-showcase-col">
+            <button
+              type="button"
+              class="phone-frame phone-trigger"
+              id="modes-phone-frame"
+              data-lightbox-shot="01-owner-home.png"
+              aria-label="Click screen to zoom: Running solo"
+            >
+              <span class="phone-screen">
+                <span class="phone-status-bar" aria-hidden="true">
+                  <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                    <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                    <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                    <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                    <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                    <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                    <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                    <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                    <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                  </svg>
+                </span>
+                <img
+                  id="modes-phone-img"
+                  src="../assets/screenshots/en/01-owner-home.png"
+                  alt="onebase. Home screen with work accounts and a solo personal budget card"
+                  width="786"
+                  height="1704"
+                  loading="lazy"
+                />
+              </span>
+            </button>
+            <p class="phone-caption" id="modes-phone-caption">
+              Work retainers and personal budgets side by side without broken spreadsheets
+            </p>
+          </div>
+
+          <div class="story-copy">
+            <h2 class="section-title" data-i18n="modes.headline">Built for one. Ready for a team.</h2>
+            <p class="section-lead" data-i18n="modes.subhead">
+              Start alone organizing client budgets, events, stores, or personal finances. Invite teammates only when cash moves between hands.
+            </p>
+
+            <div class="seg-control seg-control--light" role="tablist" aria-label="Solo or team mode">
+              <button
+                type="button"
+                class="seg-btn"
+                id="btn-mode-solo"
+                role="tab"
+                aria-selected="true"
+                data-i18n="modes.soloTab"
+              >
+                Running solo
+              </button>
+              <button
+                type="button"
+                class="seg-btn"
+                id="btn-mode-team"
+                role="tab"
+                aria-selected="false"
+                data-i18n="modes.teamTab"
+              >
+                With a team
+              </button>
+            </div>
+
+            <ul class="rule-list" id="modes-bullets"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Deep Spruce Statement Band with Architectural Hairline Grid -->
+      <section class="statement-band" id="statement">
+        <div class="container container--narrow">
+          <h2 class="statement-heading" data-i18n="statement.text">
+            Whatever you manage, if it lives in WhatsApp and Excel, it belongs in onebase.
+          </h2>
+        </div>
+      </section>
+
+      <!-- Section 5: Inside the App on Open Warm-Stone Canvas (No Card Cage) -->
+      <section class="tour-section" id="tour">
+        <div class="container">
+          <div class="tour-header">
+            <h2 class="section-title" data-i18n="tour.heading">Every screen built around real numbers.</h2>
+            <p class="section-lead" data-i18n="tour.subhead">
+              Browse complete screens directly from onebase. in English or Arabic.
+            </p>
+          </div>
+
+          <div class="underline-tablist" id="tour-tabs" role="tablist" aria-label="App screens walkthrough"></div>
+
+          <div class="tour-stage">
+            <div class="tour-copy" id="tour-copy-panel" role="tabpanel"></div>
+
+            <div class="phone-showcase-col">
+              <button
+                type="button"
+                class="phone-frame phone-trigger"
+                id="tour-phone-frame"
+                data-lightbox-shot="03-project-ledger.png"
+                aria-label="Click screen to zoom: Account ledger"
+              >
+                <span class="phone-screen">
+                  <span class="phone-status-bar" aria-hidden="true">
+                    <svg class="status-svg" viewBox="0 0 300 32" direction="ltr" preserveAspectRatio="xMidYMid meet">
+                      <text x="18" y="21" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>
+                      <rect x="108" y="6" width="84" height="20" rx="10" fill="#101A16"/>
+                      <rect x="242" y="15" width="3" height="6" rx="1" fill="currentColor"/>
+                      <rect x="247" y="13" width="3" height="8" rx="1" fill="currentColor"/>
+                      <rect x="252" y="10" width="3" height="11" rx="1" fill="currentColor"/>
+                      <rect x="257" y="8" width="3" height="13" rx="1" fill="currentColor"/>
+                      <rect x="266" y="9" width="21" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                      <rect x="268.5" y="11.5" width="15" height="7" rx="1.4" fill="currentColor"/>
+                      <rect x="288.5" y="12.5" width="2.2" height="5" rx="1" fill="currentColor"/>
+                    </svg>
+                  </span>
+                  <img
+                    id="tour-phone-img"
+                    src="../assets/screenshots/en/03-project-ledger.png"
+                    alt="onebase. Account Ledger screen showing Zamalek Studio inflows, paid transactions, and receipt badges"
+                    width="786"
+                    height="1704"
+                    loading="lazy"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Closing Free Beta on Deep Spruce + Hairline Channel Picker -->
+      <section class="cta-section" id="early-access">
+        <div class="container cta-grid">
+          <div class="cta-info">
+            <h2 class="section-title section-title--light" data-i18n="cta.heading">Move off WhatsApp and Excel today.</h2>
+            <p class="cta-lead" data-i18n="cta.lead">
+              Join the Free Beta on iOS TestFlight, Android, or Web whether you manage accounts alone or with a team.
+            </p>
+
+            <div class="channel-list" role="radiogroup" aria-label="Preferred onboarding channel">
+              <button type="button" class="channel-row" id="btn-channel-testflight" role="radio" aria-checked="true">
+                <span class="channel-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="2" width="12" height="20" rx="3" />
+                    <line x1="10" y1="18" x2="14" y2="18" />
+                  </svg>
+                </span>
+                <span class="channel-copy">
+                  <strong data-i18n="cta.btnTestflight">iOS TestFlight beta</strong>
+                  <small data-i18n="cta.btnTestflightSub">iPhone and iPad (App ID 6838113894)</small>
+                </span>
+              </button>
+
+              <button type="button" class="channel-row" id="btn-channel-android" role="radio" aria-checked="false">
+                <span class="channel-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="7" width="14" height="12" rx="3" />
+                    <path d="M8 4l1.5 2M16 4l-1.5 2" />
+                  </svg>
+                </span>
+                <span class="channel-copy">
+                  <strong data-i18n="cta.btnAndroid">Android beta</strong>
+                  <small data-i18n="cta.btnAndroidSub">APK and Play testing track</small>
+                </span>
+              </button>
+
+              <button type="button" class="channel-row" id="btn-channel-whatsapp" role="radio" aria-checked="false">
+                <span class="channel-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                </span>
+                <span class="channel-copy">
+                  <strong data-i18n="cta.btnWhatsapp">WhatsApp onboarding</strong>
+                  <small data-i18n="cta.btnWhatsappSub">Quick setup help in Arabic or English</small>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="early-form-panel">
+            <h3 data-i18n="cta.formHeading">Request free beta access</h3>
+            <p class="channel-notice" id="channel-notice" hidden></p>
+
+            <form id="early-access-form" novalidate>
+              <div class="form-grid">
+                <div class="field-group">
+                  <label for="waitlist-name" data-i18n="cta.labelName">Your name</label>
+                  <input id="waitlist-name" name="name" type="text" autocomplete="name" data-i18n-placeholder="cta.phName" placeholder="Nadia El-Shenawy" required />
+                  <span class="field-error" id="err-waitlist-name" role="alert"></span>
+                </div>
+
+                <div class="field-group">
+                  <label for="waitlist-contact" data-i18n="cta.labelContact">Email or WhatsApp</label>
+                  <input id="waitlist-contact" name="contact" type="text" data-i18n-placeholder="cta.phContact" placeholder="name@email.com or +20 10..." required />
+                  <span class="field-error" id="err-waitlist-contact" role="alert"></span>
+                </div>
+
+                <div class="field-group">
+                  <label for="waitlist-business" data-i18n="cta.labelBusiness">How you use onebase.</label>
+                  <select id="waitlist-business" name="businessType"></select>
+                </div>
+
+                <div class="field-group">
+                  <label for="waitlist-platform" data-i18n="cta.labelPlatform">Platform</label>
+                  <select id="waitlist-platform" name="platform"></select>
+                </div>
+              </div>
+
+              <span class="field-error" id="err-waitlist-submit" role="alert"></span>
+              <button type="submit" class="btn btn--brand btn--full" id="btn-waitlist-submit" data-i18n="cta.submitBtn">
+                Join free beta
+              </button>
+            </form>
+
+            <div class="form-success" id="form-success-box" hidden aria-live="polite">
+              <strong id="success-title"></strong>
+              <p id="success-body"></p>
+              <button type="button" class="btn btn--outline" id="btn-form-reset"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <a class="brand-lockup brand-lockup--footer" href="#top" aria-label="onebase. top">
+          <span class="brand-badge brand-badge--footer">
+            <img src="../assets/branding/app_icon.png" alt="" width="28" height="28" />
+          </span>
+          <span class="brand-wordmark">onebase<span class="dot">.</span></span>
+        </a>
+        <span class="footer-copy" data-i18n="footer.copyright">onebase. Clear accounts, voice and receipt entry, and team balances.</span>
+        <button type="button" class="footer-lang-link" id="btn-footer-lang" data-i18n="footer.switchLang">
+          التبديل للعربية
+        </button>
+      </div>
+    </footer>
+
+    <!-- Full-Screen App Screen Lightbox (All 11 Screens) -->
+    <div
+      class="modal-backdrop"
+      id="gallery-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-title"
+      hidden
+    >
+      <div class="lightbox-dialog">
+        <div class="lightbox-bar">
+          <strong id="lightbox-title"></strong>
+          <div class="lightbox-controls">
+            <button
+              type="button"
+              class="lightbox-icon-btn"
+              id="lightbox-prev"
+              data-i18n-aria="lightbox.prev"
+              aria-label="Previous screen"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="lightbox-icon-btn"
+              id="lightbox-next"
+              data-i18n-aria="lightbox.next"
+              aria-label="Next screen"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="lightbox-icon-btn"
+              id="lightbox-close"
+              data-i18n-aria="lightbox.close"
+              aria-label="Close preview"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="lightbox-img-wrap">
+          <img id="lightbox-img" src="../assets/screenshots/en/01-owner-home.png" alt="onebase. application screen preview" />
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
