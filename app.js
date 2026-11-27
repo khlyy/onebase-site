@@ -1,5 +1,8 @@
 /**
- * onebase. v5 Story Edition: rendering, scroll story, language, lightbox, beta form.
+ * onebase. v7:
+ * - Instant scroll-synced sticky phone (tracks reading focal line at 34% below header)
+ * - Simplicity + WhatsApp contrast cards + pain/fix list
+ * - Simple everyday examples, language switch, lightbox, and early-access form.
  */
 import { I18N } from './i18n.js';
 
@@ -13,7 +16,7 @@ const SHOT_TOP = {
 
 const STATUS_SVG =
   '<svg class="status-svg" viewBox="0 0 300 30" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
-  '<text x="20" y="20" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>' +
+  '<text x="20" y="20" direction="ltr" text-anchor="start" font-size="13.5" font-weight="600" fill="currentColor" font-family="IBM Plex Sans, sans-serif">9:41</text>' +
   '<rect x="110" y="5" width="80" height="20" rx="10" fill="#101A16"/>' +
   '<rect x="240" y="14" width="3" height="6" rx="1" fill="currentColor"/>' +
   '<rect x="245" y="12" width="3" height="8" rx="1" fill="currentColor"/>' +
@@ -50,23 +53,23 @@ function initialLang() {
 
 let lang = initialLang();
 let storyIndex = 0;
-let storyObserver = null;
+let scrollRaf = 0;
 let lightboxIndex = -1;
 let lastFocus = null;
 let lastSubmission = null;
 
-const shotPath = (shot) => `../assets/screenshots/${lang}/${shot}`;
+const shotPath = (shot) => `./assets/screenshots/${lang}/${shot}`;
 
 function chapters() {
   return I18N[lang].story.acts.flatMap((a) => a.chapters);
 }
 
-function phoneMarkup(shot, alt, label) {
+function phoneMarkup(shot, alt, label, eager = false) {
   return `
     <button type="button" class="phone-frame" data-top="${SHOT_TOP[shot] || 'canvas'}" data-lightbox-shot="${esc(shot)}" aria-label="${esc(label)}">
       <span class="phone-screen">
         <span class="phone-status-bar">${STATUS_SVG}</span>
-        <img src="${shotPath(shot)}" alt="${esc(alt)}" width="786" height="1704" loading="lazy" />
+        <img src="${shotPath(shot)}" alt="${esc(alt)}" width="786" height="1704" loading="${eager ? 'eager' : 'lazy'}" />
       </span>
     </button>`;
 }
@@ -108,20 +111,44 @@ function fillSelect(el, options) {
 
 function renderHero() {
   const h = I18N[lang].hero;
-  document.getElementById('hero-gallery').innerHTML = h.gallery
+  document.getElementById('hero-triad').innerHTML = h.phones
     .map(
-      (g) => `
-      <figure class="gallery-item">
-        ${phoneMarkup(g.shot, g.alt, `${h.zoomHint}: ${g.caption}`)}
-        <figcaption>${esc(g.caption)}</figcaption>
+      (p, i) => `
+      <figure class="triad-item${i === 1 ? ' triad-item--center' : ''}">
+        ${phoneMarkup(p.shot, p.alt, `${h.zoomHint}: ${p.caption}`, true)}
+        <figcaption>${esc(p.caption)}</figcaption>
       </figure>`
     )
     .join('');
 }
 
-function renderFits() {
-  document.getElementById('fits-grid').innerHTML = I18N[lang].fits.items
-    .map((it) => `<div class="fits-item"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`)
+function renderProblem() {
+  const pr = I18N[lang].problem;
+  document.getElementById('compare-grid').innerHTML = pr.compare
+    .map(
+      (card) => `
+      <article class="compare-card${card.featured ? ' compare-card--featured' : ''}">
+        <span class="compare-tag">${esc(card.tag)}</span>
+        <h3 class="compare-title">${esc(card.title)}</h3>
+        <p class="compare-body">${esc(card.body)}</p>
+      </article>`
+    )
+    .join('');
+
+  document.getElementById('pain-list').innerHTML = pr.rows
+    .map(
+      (row) => `
+      <li class="pain-row">
+        <div class="pain-cell pain-cell--before">
+          <span class="pain-mobile-label">${esc(pr.todayLabel)}</span>
+          <p class="pain-quote">${esc(row.pain)}</p>
+        </div>
+        <div class="pain-cell pain-cell--after">
+          <span class="pain-mobile-label">${esc(pr.fixLabel)}</span>
+          <p class="pain-fix">${esc(row.fix)}</p>
+        </div>
+      </li>`
+    )
     .join('');
 }
 
@@ -134,11 +161,15 @@ function renderStory() {
         .map((ch, k) => {
           const i = idx++;
           const actHead = k === 0 ? `<h3 class="act-title">${esc(act.title)}</h3>` : '';
+          const exampleHtml = ch.example
+            ? `<div class="chapter-example"><span class="chapter-example-label">${esc(ch.exampleLabel || '')}</span><p class="chapter-example-text">${esc(ch.example)}</p></div>`
+            : '';
           return `
           <article class="chapter${k === 0 ? ' chapter--act-start' : ''}" data-chapter="${i}">
             ${actHead}
             <h4>${esc(ch.title)}</h4>
             <p>${esc(ch.body)}</p>
+            ${exampleHtml}
             <div class="chapter-phone">${phoneMarkup(ch.shot, ch.title, `${I18N[lang].hero.zoomHint}: ${ch.name}`)}</div>
           </article>`;
         })
@@ -156,12 +187,14 @@ function renderStory() {
     )
     .join('');
 
-  setStoryIndex(Math.min(storyIndex, list.length - 1));
-  observeStory();
+  setStoryIndex(Math.min(storyIndex, list.length - 1), true);
+  syncStoryFromScroll();
 }
 
-function setStoryIndex(i) {
+function setStoryIndex(i, force = false) {
+  if (!force && i === storyIndex) return;
   const list = chapters();
+  if (i < 0 || i >= list.length) return;
   storyIndex = i;
   const ch = list[i];
   document.querySelectorAll('.chapter').forEach((el) => el.classList.toggle('is-active', Number(el.dataset.chapter) === i));
@@ -178,25 +211,52 @@ function setStoryIndex(i) {
     `<strong>${esc(ch.name)}</strong><span>${esc(I18N[lang].story.counter(i + 1, list.length))}</span>`;
 }
 
-function observeStory() {
-  storyObserver?.disconnect();
-  if (typeof IntersectionObserver === 'undefined') return;
-  storyObserver = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) setStoryIndex(Number(e.target.dataset.chapter));
-      }
-    },
-    { rootMargin: '-48% 0px -48% 0px', threshold: 0 }
-  );
-  document.querySelectorAll('.chapter').forEach((el) => storyObserver.observe(el));
+/**
+ * Deterministic instant scroll sync: picks the chapter whose heading (h4)
+ * is closest to the natural reading focal line (34% below the fixed header)
+ * so the sticky phone updates the exact moment your eyes land on the text.
+ */
+function syncStoryFromScroll() {
+  const nodes = document.querySelectorAll('.chapter');
+  if (!nodes.length) return;
+  const headerH = 68;
+  const focalY = headerH + (window.innerHeight - headerH) * 0.34;
+  let bestIdx = 0;
+  let bestDist = Infinity;
+  nodes.forEach((el) => {
+    const anchor = el.querySelector('h4') || el;
+    const rect = anchor.getBoundingClientRect();
+    const anchorY = rect.top + rect.height * 0.5;
+    const dist = Math.abs(anchorY - focalY);
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestIdx = Number(el.dataset.chapter);
+    }
+  });
+  setStoryIndex(bestIdx);
+}
+
+function syncHeader() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  header.classList.toggle('site-header--scrolled', window.scrollY > 24);
+}
+
+function onScroll() {
+  syncHeader();
+  if (scrollRaf) return;
+  scrollRaf = requestAnimationFrame(() => {
+    scrollRaf = 0;
+    syncStoryFromScroll();
+  });
 }
 
 function renderAll() {
   renderStatic();
   renderHero();
+  renderProblem();
   renderStory();
-  renderFits();
+  syncHeader();
   if (lastSubmission) renderSuccess();
   if (lightboxIndex !== -1) openLightbox(lightboxIndex);
 }
@@ -266,14 +326,22 @@ function renderSuccess() {
 
 /* ----------------------------------------------------------- Events */
 function bind() {
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   document.getElementById('btn-lang').addEventListener('click', () => setLang(lang === 'en' ? 'ar' : 'en'));
   document.getElementById('btn-lang-footer').addEventListener('click', () => setLang(lang === 'en' ? 'ar' : 'en'));
 
   document.addEventListener('click', (e) => {
     const t = e.target.closest('[data-lightbox-shot]');
-    if (!t) return;
-    const idx = chapters().findIndex((c) => c.shot === t.dataset.lightboxShot);
-    openLightbox(idx >= 0 ? idx : 0);
+    if (t) {
+      const idx = chapters().findIndex((c) => c.shot === t.dataset.lightboxShot);
+      openLightbox(idx >= 0 ? idx : 0);
+      return;
+    }
+    const ch = e.target.closest('.chapter');
+    if (ch && window.innerWidth > 960) {
+      setStoryIndex(Number(ch.dataset.chapter));
+    }
   });
   document.getElementById('lb-close').addEventListener('click', closeLightbox);
   document.getElementById('lb-prev').addEventListener('click', () => stepLightbox(-1));
@@ -331,7 +399,7 @@ function bind() {
       businessType: document.getElementById('f-use').value,
       platform: document.getElementById('f-platform').value,
       language: lang,
-      source: 'onebase-v5-story',
+      source: 'onebase-v7',
       submittedAt: new Date().toISOString(),
     };
     const btn = document.getElementById('btn-submit');
