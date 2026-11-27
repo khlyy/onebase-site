@@ -6,7 +6,7 @@
  */
 window.ONEBASE_CONFIG = {
   // Replace with your registered custom domain (e.g. "https://onebase.app" or "https://useonebase.com")
-  domain: 'https://onebase.app',
+  domain: 'https://onebasepay.com',
 
   // Canonical brand identity (always lowercase with trailing mint dot)
   appName: 'onebase.',
