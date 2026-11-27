@@ -23,6 +23,8 @@ export const I18N = {
       subhead:
         'Other finance apps bury you in 40 menus and accounting jargon. WhatsApp chats lose your receipts. onebase. is the simple middle: say it or snap it, and you are done.',
       cta: 'Get free early access',
+      ctaIos: 'Download iOS Beta (TestFlight)',
+      ctaAndroid: 'Join Android Beta (Play Store)',
       zoomHint: 'Open full screen',
       phones: [
         { shot: '11-voice-action-plan.png', caption: 'Say it, it is logged', alt: 'Voice action plan with a paid entry and a follow-up task' },
@@ -210,6 +212,7 @@ export const I18N = {
     },
     footer: {
       copy: 'onebase. Simple as WhatsApp. Built for your money.',
+      privacy: 'Privacy Policy',
       switchLang: 'التبديل للعربية',
     },
     lightbox: { close: 'Close', prev: 'Previous screen', next: 'Next screen' },
@@ -233,6 +236,8 @@ export const I18N = {
       subhead:
         'تطبيقات الحسابات التانية فيها مليون قائمة وتعقيد. وجروبات واتساب الفواتير بتضيع فيها. onebase. هو الحل البسيط: قولها أو صوّرها، وخلّصنا.',
       cta: 'احجز نسختك المجانية',
+      ctaIos: 'حمّل نسخة iOS (TestFlight)',
+      ctaAndroid: 'انضم لنسخة Android (Play Store)',
       zoomHint: 'افتح الشاشة كاملة',
       phones: [
         { shot: '11-voice-action-plan.png', caption: 'قولها وتتسجل', alt: 'خطة تنفيذ صوتية فيها حركة مدفوع ومهمة متابعة' },
@@ -420,6 +425,7 @@ export const I18N = {
     },
     footer: {
       copy: 'onebase. ببساطة واتساب. ومعمول لفلوسك.',
+      privacy: 'سياسة الخصوصية',
       switchLang: 'Switch to English',
     },
     lightbox: { close: 'إغلاق', prev: 'الشاشة السابقة', next: 'الشاشة التالية' },

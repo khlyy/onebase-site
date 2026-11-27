@@ -18,9 +18,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
     />
-    <link rel="stylesheet" href="./styles.css?v=7" />
+    <link rel="stylesheet" href="./styles.css?v=8" />
     <style>:focus-visible { outline: 2.5px solid #2EE59D; outline-offset: 2px; }</style>
-    <script src="./site-config.js?v=7"></script>
+    <script src="./site-config.js?v=8"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -50,7 +50,26 @@
           <p class="hero-sub" data-i18n="hero.subhead">
             Other finance apps bury you in 40 menus and accounting jargon. WhatsApp chats lose your receipts. onebase. is the simple middle: say it or snap it, and you are done.
           </p>
-          <a class="btn btn--mint" href="#early-access" data-i18n="hero.cta">Get free early access</a>
+          <div class="hero-actions">
+            <a
+              class="btn btn--mint"
+              id="btn-hero-ios"
+              href="https://testflight.apple.com/join/1kDxydzP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.09-.52 2.72-1.3z"/></svg>
+              <span data-i18n="hero.ctaIos">Download iOS Beta (TestFlight)</span>
+            </a>
+            <a
+              class="btn btn--ghost-light"
+              id="btn-hero-android"
+              href="#early-access"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.525.235-1.012.609-1.335zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+              <span data-i18n="hero.ctaAndroid">Join Android Beta (Play Store)</span>
+            </a>
+          </div>
         </div>
         <div class="container">
           <div class="hero-triad" id="hero-triad"></div>
@@ -151,7 +170,7 @@
       <div class="container footer-row">
         <span class="brand-wordmark footer-mark">onebase<span class="dot">.</span></span>
         <span class="footer-copy" data-i18n="footer.copy">onebase. Simple as WhatsApp. Built for your money.</span>
-        <a class="footer-lang" href="./privacy/" style="text-decoration:none;">Privacy Policy</a>
+        <a class="footer-lang" href="./privacy/" style="text-decoration:none;" data-i18n="footer.privacy">Privacy Policy</a>
         <button type="button" class="footer-lang" id="btn-lang-footer" data-i18n="footer.switchLang">التبديل للعربية</button>
       </div>
     </footer>
@@ -176,6 +195,6 @@
       </div>
     </div>
 
-    <script type="module" src="./app.js?v=7"></script>
+    <script type="module" src="./app.js?v=8"></script>
   </body>
 </html>
